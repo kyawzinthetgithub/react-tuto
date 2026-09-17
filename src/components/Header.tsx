@@ -1,18 +1,14 @@
-import Button from "./Button";
-import HeaderText from "./HeaderText";
-
 interface HeaderProps {
   username?: string;
+  point: number;
 }
 
-function Header({ username = 'Guest' }: HeaderProps) {
+function Header({ username, point }: HeaderProps) {
   return (
     <div>
-      <h2 className="text-2xl font-bold text-red-500 capitalize">React App</h2>
-      <HeaderText text={`Header Text, ${username}!`} />
-      <p className="p-8">Welcome, {username}!</p>
-
-      <Button name='submit' />
+      {/* {username ? <h2 className="text-2xl font-bold text-red-500 capitalize">Hello {username}!</h2> : <p>No Username found!</p>} */}
+      {username && <h2 className="text-2xl font-bold text-red-500 capitalize">Hello {username}!</h2>}
+      <p className="text-lg text-gray-600">You have {point} points.</p>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./Header";
 
 function Statetest() {
     const [point, setPoint] = useState(0);
@@ -32,6 +33,8 @@ function Statetest() {
                     +
                 </button>
             </div>
+
+            <Header point={point} />
         </div>
     );
 }
