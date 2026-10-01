@@ -1,43 +1,46 @@
 import { useRef, useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 function Timer() {
 
     const [seconds, setSeconds] = useState(0);
     const intervalRef = useRef<number | null>(null);
+    const { theme, toggleTheme } = useTheme();
 
     const start = () => {
         console.log(intervalRef.current);
-        if(intervalRef.current) return;
+        if (intervalRef.current) return;
         intervalRef.current = window.setInterval(() => {
             setSeconds(prev => prev + 1);
         }, 1000);
-    }
+    };
 
     const stop = () => {
-        if(intervalRef.current) {
+        if (intervalRef.current) {
             window.clearInterval(intervalRef.current);
             intervalRef.current = null;
         }
-    }
+    };
 
     const reset = () => {
-        if(intervalRef.current) {
+        if (intervalRef.current) {
             window.clearInterval(intervalRef.current);
             intervalRef.current = null;
             setSeconds(0);
         }
-    }
+    };
 
     return (
         <>
             <h2>Timer</h2>
-
+            <p className="text-green-500 p-5">Theme: {theme}</p>
             <div className="p-5">
                 <p>Seconds: {seconds} s</p>
                 <button className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600" onClick={start}>Start</button>
                 <button className="p-2 bg-red-500 text-white rounded hover:bg-red-600 ml-2" onClick={stop}>Stop</button>
                 <button className="p-2 bg-green-500 text-white rounded hover:bg-green-600 ml-2" onClick={reset}>Reset</button>
             </div>
+                <button className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-2" onClick={toggleTheme}>Toggle Theme</button>
         </>
     );
 }
