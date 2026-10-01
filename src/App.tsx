@@ -1,10 +1,10 @@
-import Statetest from "./components/Statetest"
+import Timer from "./components/Timer";
 
 function App() {
 
   return (
     <>
-      <Statetest />
+      <Timer />
     </>
   )
 }
