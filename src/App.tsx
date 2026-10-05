@@ -1,4 +1,4 @@
-import Timer from "./components/Timer";
+import Statetest from "./components/Statetest";
 import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider>
       <>
-      <Timer />
+      <Statetest />
     </>
     </ThemeProvider>
   )
