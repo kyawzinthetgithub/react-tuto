@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 function Header() {
   return (
@@ -7,8 +7,8 @@ function Header() {
         <h1 className="text-2xl font-bold">My App</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><Link to={'/'} className="hover:underline">Home</Link></li>
-            <li><Link to={'/about'} className="hover:underline">About</Link></li>
+            <li><NavLink to={'/'} className={({isActive}) => isActive ? "underline" : "hover:underline"}>Home</NavLink></li>
+            <li><NavLink to={'/about'} className={({isActive}) => isActive ? "underline" : "hover:underline"}>About</NavLink></li>
           </ul>
         </nav>
       </div>
