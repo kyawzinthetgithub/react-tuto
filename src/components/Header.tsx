@@ -1,14 +1,17 @@
-interface HeaderProps {
-  username?: string;
-  point: number;
-}
+import { Link } from "react-router";
 
-function Header({ username, point }: HeaderProps) {
+function Header() {
   return (
     <div>
-      {/* {username ? <h2 className="text-2xl font-bold text-red-500 capitalize">Hello {username}!</h2> : <p>No Username found!</p>} */}
-      {username && <h2 className="text-2xl font-bold text-red-500 capitalize">Hello {username}!</h2>}
-      <p className="text-lg text-gray-600">You have {point} points.</p>
+      <div className="flex justify-between items-center p-4 bg-blue-500 text-white">
+        <h1 className="text-2xl font-bold">My App</h1>
+        <nav>
+          <ul className="flex space-x-4">
+            <li><Link to={'/'} className="hover:underline">Home</Link></li>
+            <li><Link to={'/about'} className="hover:underline">About</Link></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 };
