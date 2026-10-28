@@ -9,6 +9,7 @@ function Header() {
           <ul className="flex space-x-4">
             <li><NavLink to={'/'} className={({isActive}) => isActive ? "underline" : "hover:underline"}>Home</NavLink></li>
             <li><NavLink to={'/about'} className={({isActive}) => isActive ? "underline" : "hover:underline"}>About</NavLink></li>
+            <li><NavLink to={'/users'} className={({isActive}) => isActive ? "underline" : "hover:underline"}>Users</NavLink></li>
           </ul>
         </nav>
       </div>

@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import MainLayout from "./layouts/MainLayout";
+import { userLoader } from "./loaders/user-loader";
+import UserPage from "./pages/UserPage";
 
 function App() {
 
@@ -19,6 +21,11 @@ function App() {
         {
           path: "/about",
           element: <AboutPage />
+        },
+        {
+          path: 'users',
+          element: <UserPage />,
+          loader: userLoader
         }
       ]
     }
