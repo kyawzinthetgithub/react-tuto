@@ -6,6 +6,10 @@ import MainLayout from "./layouts/MainLayout";
 import { userLoader } from "./loaders/user-loader";
 import UserPage from "./pages/UserPage";
 
+function UsersHydrateFallback() {
+  return <div role="status">Loading users...</div>;
+}
+
 function App() {
 
   const router = createBrowserRouter([
@@ -25,7 +29,8 @@ function App() {
         {
           path: 'users',
           element: <UserPage />,
-          loader: userLoader
+          loader: userLoader,
+          HydrateFallback: UsersHydrateFallback
         }
       ]
     }

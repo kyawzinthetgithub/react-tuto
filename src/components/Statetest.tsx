@@ -1,6 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 
-interface Users {
+export interface Users {
     id: number;
     name: string;
     username: string;
