@@ -6,6 +6,7 @@ import MainLayout from "./layouts/MainLayout";
 import { userLoader } from "./loaders/user-loader";
 import UserPage from "./pages/UserPage";
 import { searchUserAction } from "./actions/search-user-action";
+import InfoPage from "./pages/InfoPage";
 
 function UsersHydrateFallback() {
   return <div role="status">Loading users...</div>;
@@ -33,6 +34,10 @@ function App() {
           loader: userLoader,
           HydrateFallback: UsersHydrateFallback,
           action: searchUserAction
+        },
+        {
+          path: '/user/:id',
+          element: <InfoPage />
         }
       ]
     }

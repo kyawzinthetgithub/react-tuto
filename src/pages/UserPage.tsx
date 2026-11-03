@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router";
+import { Form, NavLink, useLoaderData } from "react-router";
 import type { Users } from "../components/Statetest";
 
 function UserPage() {
@@ -13,7 +13,7 @@ function UserPage() {
             </Form>
 
             <h1>Users</h1>
-            <ul>{data && data.map((user: Users) => (<li key={user.id} className="list-disc ml-5">{user.name} - {user.email}</li>))}</ul>
+            <ul>{data && data.map((user: Users) => (<NavLink key={user.id} to={`/user/${user.id}`}><li className="list-disc ml-5 hover:text-blue-500">{user.name} - {user.email}</li></NavLink>))}</ul>
         </div>
     );
 }
